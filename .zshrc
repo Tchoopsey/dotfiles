@@ -136,6 +136,7 @@ source $ZSH/oh-my-zsh.sh
  alias oop="cd ~/Documents/Faks/OOP"
  alias spa="cd ~/Documents/Faks/SPA"
  alias os="cd ~/Documents/Faks/OS"
+ alias mrz="cd ~/Documents/Faks/Mreze"
 
 # list files/directories
  alias ls="ls -lh --color=auto"
@@ -147,7 +148,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Wine SC
 # alias wow="wine ~/Documents/World\ of\ Warcraft\ 3.3.5a/Wow.exe"
- alias wow="wine ~/Documents/World\ of\ Warcraft\ 1.12/WoW.exe"
+ alias wow="wine ~/Documents/client_1165/WoW.exe"
 
 # Brightness
  alias br="xrandr --output eDP --brightness"
@@ -157,3 +158,10 @@ source $ZSH/oh-my-zsh.sh
 
 # GitConfig .dotfiles
  alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# Tmux
+ alias tmuxs='tmux new -s '
+ alias tmKS='tmux kill-server'
+ alias tmks='tmux kill-session -t'
+ alias tma='tmux attach-session -t'
+ alias tmd='tmux detach'
