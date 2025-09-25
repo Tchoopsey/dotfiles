@@ -1,0 +1,15 @@
+
+[font]
+size = 8.5
+normal = { family = "Source Code Pro", style = "Semibold" }
+
+[window]
+padding = { x = 3, y = 2 }
+#dynamic_padding = true
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }
+thickness = 0.25
+
+[general]
+import = [ "~/.config/alacritty/themes/themes/gruvbox-dark.toml" ]
