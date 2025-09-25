@@ -13,11 +13,12 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+#font pango:monospace 8
+font pango:Source Code Pro 5
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -32,7 +33,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+exec_always --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -45,15 +46,15 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id /usr/local/bin/dmenu-recent
+#bindsym $mod+d exec --no-startup-id /usr/local/bin/dmenu-recent
 # A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -192,9 +193,13 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	font pango: Hermic Bold, FontAwsome 10
+	font pango: Hermit Bold, FontAwsome 10
         status_command i3status-rs ~/.config/i3status-rust/config.toml
 	position top
+    colors {
+        background #000000
+        focused_workspace #980E0E #5C0404 #ffffff
+    }
 }
 
 for_window [class="^.*"] border pixel 2
@@ -205,12 +210,12 @@ gaps outer -5
 
 # StartUp App Exec  #
 # # # # # # # #  #  #
-exec_always --no-startup-id feh --bg-fill /home/tchoopsey/Pictures/WP/982990.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/WP/wp2.png
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 #exec_always --no-startup-id wal -R 
 exec --no-startup-id polkit
 # Start Applications
-bindsym Print exec --no-startup-id i3-scrot
+bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Ss/'
 
 # Hide/Show i3status bar
 bindsym $mod+m bar mode toggle
@@ -237,3 +242,7 @@ for_window [title="desmume"] floating enable border pixel 2
 
 # Specific workspace startup
 assign [class="firefox"] $ws3
+
+# class         border  bckgr   txt     indicat child_border
+client.focused  #5D0D0D #000000 #ffffff #832B09 #5d0d0d
+# keep border n child_border the same color

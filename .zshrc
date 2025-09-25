@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-(cat ~/.cache/wal/sequences &)
+#(cat ~/.cache/wal/sequences &)
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tchoopsey/.oh-my-zsh"
 
@@ -124,8 +124,10 @@ source $ZSH/oh-my-zsh.sh
  alias pcs="sudo pacman -S"
  alias pcr="sudo pacman -R"
 
-# cat replacement
+# replacements
  alias cat="bat"
+ alias neofetch="fastfetch"
+ alias py="python"
 
 # Change to specific Directories
  alias op1="cd ~/Documents/Faks/OP1/"
@@ -147,8 +149,8 @@ source $ZSH/oh-my-zsh.sh
  alias ....="cd ../../../"
 
 # Wine SC
-# alias wow="wine ~/Documents/World\ of\ Warcraft\ 3.3.5a/Wow.exe"
- alias wow="wine ~/Documents/client_1165/WoW.exe"
+ alias wow="wine ~/Documents/World\ of\ Warcraft\ 3.3.5a/Wow.exe"
+# alias wow="wine ~/Documents/client_1165/WoW.exe"
 
 # Brightness
  alias br="xrandr --output eDP --brightness"
@@ -159,9 +161,32 @@ source $ZSH/oh-my-zsh.sh
 # GitConfig .dotfiles
  alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# tipTop
+ alias top='btop'
+
 # Tmux
  alias tmuxs='tmux new -s '
  alias tmKS='tmux kill-server'
  alias tmks='tmux kill-session -t'
  alias tma='tmux attach-session -t'
  alias tmd='tmux detach'
+
+# Maven
+ alias mvnss="mvn archetype:generate -DgroupId=com.tch.app -DartifactId=the-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5 -DinteractiveMode=false"
+
+#RegexCS
+ alias regexcs='cat ~/Documents/regexCheatSheat.txt'
+
+#
+# export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
+# export PATH=$JAVA_HOME/bin:$PATH
+export PATH=$HOME/.npm-global/bin:$PATH >> ~/.zshrc
+
+# export ANDROID_HOME=$HOME/Android/Sdk
+# export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH
+# export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+# export ANDROID_HOME=$HOME/Android/Sdk
+# export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+# export PATH=$PATH:$ANDROID_HOME/emulator
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
